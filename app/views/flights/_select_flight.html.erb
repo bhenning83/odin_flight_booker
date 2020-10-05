@@ -1,0 +1,14 @@
+<%= form_for :flight, method: 'get' do |f| %>
+    <% @found_flights.each do |flight| %>
+    <h3>Leaving from:    <%= flight.from_airport.code %></h3>
+    <h3>Arriving at:     <%= flight.to_airport.code %></h3>
+    <h3>Departing:       <%= flight.departure_time.strftime('%d/%m/%y') %> at
+                         <%= flight.departure_time.strftime('%I:%M %p') %></h3>
+    <h3>Arriving: <%= (flight.duration + flight.departure_time).strftime('%I:%M %p') %></h3><br /><br />
+    <%= f.label :flight, 'Select Flight' %>
+    <%= f.radio_button :flight, flight.id %>
+    <hr>
+  <% end %>
+    <%= f.submit 'Go to Booking'%>
+<% end %>
+  

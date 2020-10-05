@@ -16,14 +16,16 @@ OMA = Airport.create({ city: 'Omaha',       code: 'OMA' })
 KCI = Airport.create({ city: 'Kansas City', code: 'KCI' })
 ATL = Airport.create({ city: 'Atlanta',     code: 'ATL' })
 
-Flight.create([{ from_airport: LNK, to_airport: DIA,
+Flight.create([{ from_airport: LNK, to_airport: DIA, date: '2020-10-02',
                 departure_time: '2020-10-02 06:33:00', duration: '01:38:00' },
-               { from_airport: OMA, to_airport: ATL,
+               { from_airport: OMA, to_airport: ATL, date: '2020-10-31',
                 departure_time: '2020-10-31 08:12:00', duration: '02:52:00' },
-               { from_airport: ATL, to_airport: KCI,
+               { from_airport: ATL, to_airport: KCI, date: '2020-10-31',
                 departure_time: '2020-10-31 12:15:00', duration: '02:44:00' },
-               { from_airport: LNK, to_airport: KCI,
+               { from_airport: LNK, to_airport: KCI, date: '2020-12-15',
                 departure_time: '2020-12-15 05:57:00', duration: '00:49:00' },
-               { from_airport: KCI, to_airport: DIA,
+               { from_airport: KCI, to_airport: DIA, date: '2020-12-15',
                 departure_time: '2020-12-15 08:23:00', duration: '01:22:00' },
+               { from_airport: LNK, to_airport: DIA, date: '2020-10-02',
+                departure_time: '2020-10-02 07:45:00', duration: '01:22:00' }
               ])

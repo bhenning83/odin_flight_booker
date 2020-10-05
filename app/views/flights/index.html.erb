@@ -1,0 +1,27 @@
+<h1>Search</h1>
+
+<%= form_for :flight, url: flights_path, method: 'get' do |f| %>
+  <div>
+    <%= f.label :to_airport, 'Where ya headed?' %>
+    <%= f.select(:to_airport, @city_options) %>
+  </div>
+  <div>
+    <%= f.label :from_airport, "Where ya hailin' from?" %>
+    <%= f.select(:from_airport, @city_options) %>
+  </div> 
+   <div>
+    <%= f.label :date, "When ya saddlin' up?" %>
+    <%= f.select(:date, @date_options.uniq) %>
+  </div> 
+  <div>
+    <%= f.label :passengers, "Any others in yer party?" %>
+    <%= f.select(:passengers, [1, 2, 3, 4]) %>
+  </div> 
+  
+  <%= f.submit 'Look Up Flights'%>
+  
+<% end %>
+
+<% if params[:commit] %>
+  <%= render 'search_results' %>
+<% end %>

@@ -1,0 +1,11 @@
+<% @found_flights = Flight.where(
+                                to_airport: params[:flight][:to_airport],
+                                from_airport: params[:flight][:from_airport],
+                                date: params[:flight][:date]
+                                ) %>
+
+<% if !@found_flights.any? %>
+  <h3>No flights found :(</h3>
+<% else %>
+  <%= render 'select_flight'%>
+<% end %>
