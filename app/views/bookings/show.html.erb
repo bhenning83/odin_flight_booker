@@ -1,0 +1,14 @@
+<h1>Boy Howdy! Yer all set!</h1>
+
+<h3>The deets:<h3>
+<h4>Departing: <%= @flight.from_airport.city %> from #<%= @flight.from_airport.code %>
+  on <%= @flight.departure_time.strftime('%m/%d/%y') %> at <%= @flight.departure_time.strftime('%I:%M %p') %> </h4>
+<h4>Arriving: <%= @flight.to_airport.city %> at #<%= @flight.to_airport.code %> on
+     <%= (@flight.duration + @flight.departure_time).strftime('%m/%d/%y') %> at 
+     <%= (@flight.duration + @flight.departure_time).strftime('%I:%M %p') %></h4>
+<h4>Posse:</h4>
+<ul>
+  <% @booking.passengers.each do |p| %>
+    <li><%= p.name %><li>
+  <% end %>
+</ul>
