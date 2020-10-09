@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+<body>
+  <h1>Boy Howdy! Yer all set, <%= @passenger.name %>!</h1>
+  <h2>Booking number: <%= @booking.id %></h2>
+
+  <h3>The deets:<h3>
+  <h4>Departing: <%= @booking.flight.from_airport.city %> from #<%= @booking.flight.from_airport.code %>
+    on <%= @booking.flight.departure_time.strftime('%m/%d/%y') %> at <%= @booking.flight.departure_time.strftime('%I:%M %p') %> </h4>
+  <h4>Arriving: <%= @booking.flight.to_airport.city %> at #<%= @booking.flight.to_airport.code %> on
+      <%= (@booking.flight.duration + @booking.flight.departure_time).strftime('%m/%d/%y') %> at 
+      <%= (@booking.flight.duration + @booking.flight.departure_time).strftime('%I:%M %p') %></h4>
+ 
+  <p>Have yerself a good trip, ya hear?</p>
+</body>

@@ -3,7 +3,7 @@
   <%= f.hidden_field :flight_id, value: @flight.id %>
   <% @pas_count = 1 %>
   <%= f.fields_for :passengers do |p| %>
-    <h5>Passenger: <%= @pas_count %></h5>
+    <h5>Passenger <%= @pas_count %></h5>
     <% @pas_count += 1 %>
     <%= p.label :name, 'Name:' %>
     <%= p.text_field :name %><br />

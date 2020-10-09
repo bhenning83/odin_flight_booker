@@ -1,0 +1,13 @@
+Boy Howdy! Yer all set, <%= @passenger.name %>!
+
+============================================
+Booking number: <%= @booking.id %>
+
+The deets:
+Departing: <%= @booking.flight.from_airport.city %> from #<%= @booking.flight.from_airport.code %>
+  on <%= @booking.flight.departure_time.strftime('%m/%d/%y') %> at <%= @booking.flight.departure_time.strftime('%I:%M %p') %>
+Arriving: <%= @booking.flight.to_airport.city %> at #<%= @booking.flight.to_airport.code %> on
+    <%= (@booking.flight.duration + @booking.flight.departure_time).strftime('%m/%d/%y') %> at 
+    <%= (@booking.flight.duration + @booking.flight.departure_time).strftime('%I:%M %p') %></h4>
+
+Have yerself a good trip, ya hear?
